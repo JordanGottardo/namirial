@@ -1,5 +1,6 @@
 using CustomersWebApi.DataAccess;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,13 @@ builder.Services.AddDbContext<CustomerContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
+
+builder.Logging.ClearProviders();
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+// Register Serilog
+builder.Logging.AddSerilog(logger);
 
 
 builder.Services.AddControllers();
