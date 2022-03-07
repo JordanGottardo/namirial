@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomersWebApi", "CustomersWebApi\CustomersWebApi.csproj", "{B37E81AB-99A8-4544-ABB7-752F61FB006D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomersWebApi", "CustomersWebApi\CustomersWebApi.csproj", "{B37E81AB-99A8-4544-ABB7-752F61FB006D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormApp", "WebFormApp\WebFormApp.csproj", "{B3D3D06D-A570-473C-A08E-3D765D6D9574}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B37E81AB-99A8-4544-ABB7-752F61FB006D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B37E81AB-99A8-4544-ABB7-752F61FB006D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B37E81AB-99A8-4544-ABB7-752F61FB006D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D3D06D-A570-473C-A08E-3D765D6D9574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D3D06D-A570-473C-A08E-3D765D6D9574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D3D06D-A570-473C-A08E-3D765D6D9574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D3D06D-A570-473C-A08E-3D765D6D9574}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
