@@ -19,12 +19,20 @@ namespace CustomersWebApi.Controllers
 
         [HttpGet]
         [Route("customers")]
-        public ActionResult<CustomerDto> Get(int startIndex, int size)
+        public ActionResult<CustomerDto> Get(int page, int pageSize)
         {
+            _logger.LogInformation($"Received request page={page} pageSize={pageSize}");
+
+            //return Ok(_context
+            //    .Customers
+            //    .Skip(0 * page)
+            //    .Take(pageSize)
+            //    .OrderBy(c => c.CompanyName)
+            //    .ToList()
+            //    .Select(c => c.AsDto()));
+
             return Ok(_context
                 .Customers
-                .Skip(startIndex)
-                .Take(size)
                 .OrderBy(c => c.CompanyName)
                 .ToList()
                 .Select(c => c.AsDto()));

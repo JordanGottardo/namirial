@@ -16,9 +16,28 @@ namespace CustomersWebApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var response = client.GetAsync("http://localhost:5068/customers?startIndex=0&size=2").Result;
-            response.EnsureSuccessStatusCode();
+            System.Diagnostics.Debug.WriteLine("pageload");
+            if (IsPostBack)
+            {
+                return;
+            }
 
+            LoadCustomers(0);
+        }
+
+        protected void GridView1OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("GridView1OnPageIndexChanging");
+
+            GridView1.PageIndex = e.NewPageIndex;
+            LoadCustomers(0);
+        }
+
+
+        private void LoadCustomers(int page)
+        {
+            var response = client.GetAsync("http://localhost:5068/customers").Result;
+            response.EnsureSuccessStatusCode();
             var responseBody = response.Content.ReadAsStringAsync().Result;
             var dataTable = JsonConvert.DeserializeObject<DataTable>(responseBody);
             GridView1.DataSource = dataTable;
