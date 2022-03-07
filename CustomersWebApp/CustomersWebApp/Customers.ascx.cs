@@ -36,37 +36,12 @@ namespace CustomersWebApp
 
         private void LoadCustomers(int page)
         {
-            var response = client.GetAsync("http://localhost:5068/customers").Result;
+            var response = client.GetAsync("http://localhost:5000/customers").Result;
             response.EnsureSuccessStatusCode();
             var responseBody = response.Content.ReadAsStringAsync().Result;
             var dataTable = JsonConvert.DeserializeObject<DataTable>(responseBody);
             GridView1.DataSource = dataTable;
             GridView1.DataBind();
         }
-    }
-
-    public class CustomerDto
-    {
-        public string CustomerID { get; set; }
-
-        public string CompanyName { get; set; }
-
-        public string ContactName { get; set; }
-
-        public string ContactTitle { get; set; }
-
-        public string Address { get; set; }
-
-        public string City { get; set; }
-
-        public string Region { get; set; }
-
-        public string PostalCode { get; set; }
-
-        public string Country { get; set; }
-
-        public string Phone { get; set; }
-
-        public string Fax { get; set; }
     }
 }
