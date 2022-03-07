@@ -16,7 +16,6 @@ namespace CustomersWebApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("pageload");
             if (IsPostBack)
             {
                 return;
@@ -27,8 +26,6 @@ namespace CustomersWebApp
 
         protected void GridView1OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("GridView1OnPageIndexChanging");
-
             GridView1.PageIndex = e.NewPageIndex;
             LoadCustomers(0);
         }
